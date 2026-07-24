@@ -1,0 +1,35 @@
+#!/bin/sh
+# Exit 0 when the target pane/window contains a foreground program,
+# and exit 1 when all panes are sitting at an idle shell.
+
+scope=$1
+target=$2
+
+case "$scope" in
+  pane)
+    commands=$(tmux display-message -p -t "$target" '#{pane_current_command}') || exit 0
+    ;;
+  window)
+    commands=$(tmux list-panes -t "$target" -F '#{pane_current_command}') || exit 0
+    ;;
+  *)
+    exit 0
+    ;;
+esac
+
+default_shell=$(tmux show-options -gv default-shell 2>/dev/null)
+default_shell=${default_shell##*/}
+
+while IFS= read -r command; do
+  case "$command" in
+    ""|"$default_shell"|sh|bash|dash|zsh|fish|nu|ksh|csh|tcsh|elvish)
+      ;;
+    *)
+      exit 0
+      ;;
+  esac
+done <<EOF
+$commands
+EOF
+
+exit 1
