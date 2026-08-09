@@ -1,0 +1,19 @@
+# Optional machine- and user-specific settings.
+# Copy this file to tmux.local.conf and uncomment what you need.
+
+# Network probe used by tmux-online-status (default: www.google.com).
+# set -g @route_to_ping "1.1.1.1"
+
+# Optional screen saver command. This is not an authentication lock.
+# set -g lock-command 'cmatrix -s'
+# set -g lock-after-time 600
+
+# Restore Neovim sessions with tmux-resurrect.
+# set -g @resurrect-strategy-nvim 'session'
+
+# pi-focus-bell integration: pi install npm:pi-focus-bell
+# set-hook -g after-select-pane 'set-option -p @pi_bell 0'
+# set-hook -g after-select-window 'set-option -p @pi_bell 0'
+
+# Example: customize the pane label for common programs.
+# set -g pane-border-format "#{?pane_active,#[fg=#{@thm_peach}]#[bold],#[fg=#{@thm_yellow}]} #{?#{==:#{pane_current_command},nvim},,󰘧} P.#P #{pane_title} #[default]"
