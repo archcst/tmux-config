@@ -1,6 +1,9 @@
 # Optional machine- and user-specific settings.
 # Copy this file to tmux.local.conf and uncomment what you need.
 
+# Prefix key (default: C-b).
+# set -g @prefix 'C-a'
+
 # Network probe used by tmux-online-status (default: www.google.com).
 # set -g @route_to_ping "1.1.1.1"
 
