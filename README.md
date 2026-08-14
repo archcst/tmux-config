@@ -181,7 +181,12 @@ Layout menu 包含 `even-horizontal`、`even-vertical`、`main-horizontal`、`ma
 | --- | --- |
 | `Escape` | 有 selection 时执行 `clear-selection`，否则退出 copy mode |
 | `v` | `begin-selection` |
-| `y` | `copy-pipe-and-cancel` |
+| `y` / `Enter` / `C-j` | 复制并清除 selection，但留在 copy mode |
+| `A` | 追加 selection 到 paste buffer，并留在 copy mode |
+| `D` | 复制到行尾，并留在 copy mode |
+| 鼠标拖选 / 双击 / 三击 | 复制 selection，并留在 copy mode |
+
+所有复制方式都不会再自动退出 copy mode；复制完成后按 `Escape` 手动退出。
 
 完整定义见 [`tmux.keymap.conf`](tmux.keymap.conf)。
 
