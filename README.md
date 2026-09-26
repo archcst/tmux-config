@@ -78,6 +78,7 @@ set -g @prefix 'C-a'
 | `C-1..9` | `select-window` by index |
 | `Tab` | `last-pane` |
 | `C-h` / `C-l` | previous / next window，可重复 |
+| `C-o` | `switch-client -p`，previous session，可重复 |
 | `Space` | `choose-tree -w` |
 | `?` | `list-keys` |
 | `:` | 打开 `command-prompt` |
@@ -146,7 +147,6 @@ set -g @prefix 'C-a'
 | `w` / `s` | `choose-session` |
 | `l` | 打开 layout menu |
 | `n` | 在当前 path 创建并命名 session |
-| `o` | `switch-client -p`，切换到 previous session |
 
 Layout menu 包含 `even-horizontal`、`even-vertical`、`main-horizontal`、`main-vertical` 和 `tiled`。
 
