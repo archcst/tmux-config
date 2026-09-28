@@ -138,10 +138,11 @@ set -g @prefix 'C-a'
 
 通过 `prefix + o` 进入。
 
+另 prefix + `Q` 仍有确认后 `kill-session`。`session` 表内不再提供关闭 session 的快捷键，如需删除请用 `w` / `s` 进入 `choose-session`（`x` 删除）。
+
 | Key | Command / behavior |
 | --- | --- |
 | `Escape` | 返回 `root` key table |
-| `x` | `kill-session` |
 | `d` | `detach-client` |
 | `r` | `rename-session` |
 | `w` / `s` | `choose-session` |
