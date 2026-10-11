@@ -48,6 +48,12 @@ set -g @prefix 'C-a'
 
 重新加载后，`prefix + prefix` 会向当前 pane 发送 prefix key。`cmatrix` 只是屏保效果，不是身份验证锁屏。
 
+## Pane 标题
+
+顶部标签显示为 `1. 标题`，保留项目或自定义标题。焦点 pane 的文字和边框为橙色，非焦点为灰色。可通过 `prefix + p`、`r` 修改标题。
+
+`tmux.local.conf.example` 提供 pi-focus-bell 的可选绿色背景提示，文字仍使用对应的焦点颜色。
+
 ## Key tables 与 key bindings
 
 默认 `prefix` 为 `C-b`，可以在 `tmux.local.conf` 中覆盖。下表中的按键均在进入对应 key table 后使用。
