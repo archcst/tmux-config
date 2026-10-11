@@ -94,7 +94,7 @@ set -g @prefix 'C-a'
 | `C-s` | 使用 tmux-resurrect save session |
 | `R` | 使用 tmux-resurrect restore session |
 | `C-x` | `lock-server` |
-| `C-w` | toggle FloaX scratch terminal |
+| `C-f` | toggle FloaX scratch terminal |
 | `P` | 打开 FloaX menu |
 | `u` | 使用 tmux-fzf-url 选择 URL |
 | `I` | TPM install plugins |
