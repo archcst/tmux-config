@@ -18,6 +18,13 @@
 # set-hook -g after-select-pane 'set-option -p @pi_bell 0'
 # set-hook -g after-select-window 'set-option -p @pi_bell 0'
 
+# macOS: switch to English when selecting a pane or changing the current window.
+# Requires macime: brew install riodelphino/tap/macime
+# Adjust the executable path and input source ID for your machine (macime list).
+# Hook index 100 preserves the pi-focus-bell hooks above.
+# set-hook -g 'after-select-pane[100]' 'run-shell "/opt/homebrew/bin/macime set com.apple.keylayout.ABC"'
+# set-hook -g 'session-window-changed[100]' 'run-shell "/opt/homebrew/bin/macime set com.apple.keylayout.ABC"'
+
 # Optional black-on-green titles for panes marked by pi-focus-bell.
 # Border colors indicate focus.
 # set -g pane-border-format "#{?#{==:#{@pi_bell},1},#[bg=#{@thm_green}]#[fg=#000000]#[bold],#[bg=default]#{?pane_active,#[fg=#{@thm_peach}]#[bold],#[fg=#{@thm_surface_2}]#[nobold]}} #P. #{s|^π - ||:#{s|^.*@[^ ]* ||:#{pane_title}}} #[default]"
